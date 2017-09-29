@@ -1,0 +1,70 @@
+CIS 667 Lab 3 submission
+
+Qinzhe Zhang (qzhang22@syr.edu) 
+Lab Session: M002
+------------------------------------------------------------------------
+Remove code:
+
+(defun myremove (lis1 A)
+	(cond 
+		((eq (length lis1) 0) nil)
+		((eq (first lis1) A) (myremove (cdr lis1)  A))
+		(t (cons (car lis1) (myremove (cdr lis1)  A) ) )
+	)
+)
+------------------------------------------------------------------------
+Replace code:
+
+(defun myreplace (lis1 A B)
+	(cond
+		((eq (length lis1) 0) nil)
+		((eq (first lis1) A) (cons B (myreplace (cdr lis1) A B)) )
+		(t (cons (first lis1) (myreplace (cdr lis1) A B)) )
+	)
+)
+-------------------------------------------------------------------------
+script of running:
+
+redpocket@redpocket-VirtualBox: ~/Desktop/CIS667/lab3
+redpocket@redpocket-VirtualBox: ~/Desktop/CIS667/lab3$ clisp
+  i i i i i i i       ooooo    o        ooooooo   ooooo   ooooo
+  I I I I I I I      8     8   8           8     8     o  8    8
+  I  \ `+' /  I      8         8           8     8        8    8
+   \  `-+-'  /       8         8           8      ooooo   8oooo
+    `-__|__-'        8         8           8           8  8
+        |            8     o   8           8     o     8  8
+  ------+------       ooooo    8oooooo  ooo8ooo   ooooo   8
+
+Welcome to GNU CLISP 2.49 (2010-07-07) <http://clisp.cons.org/>
+
+Copyright (c) Bruno Haible, Michael Stoll 1992, 1993
+Copyright (c) Bruno Haible, Marcus Daniels 1994-1997
+Copyright (c) Bruno Haible, Pierpaolo Bernardi, Sam Steingold 1998
+Copyright (c) Bruno Haible, Sam Steingold 1999-2000
+Copyright (c) Sam Steingold, Bruno Haible 2001-2010
+
+Type :h and hit Enter for context help.
+
+[1]> (load "lab_remove.lisp")
+;; Loading file lab_remove.lisp ...
+;; Loaded file lab_remove.lisp
+T
+[2]> (load "lab_replace")
+;; Loading file lab_replace.lisp ...
+;; Loaded file lab_replace.lisp
+T
+[3]> (myremove '(a b c) 'b)
+(A C)
+[4]> ((myremove '(a b c b c b c b c) 'b))
+(A C C C C)
+[5]> ((myremove '(a b c b nil c b c b c) 'b))
+(A C NIL C C C)
+[6]> (myreplace '(a b c) 'b 'a)
+(A A C)
+[7]> (myreplace '(a b c b c b c b c) 'b 'a)
+(A A C A C A C A C)
+[8]> (myreplace '(a b c b nil c b c b c) 'b)
+(A A C A NIL C A C A C)
+[9]> 
+Bye.
+

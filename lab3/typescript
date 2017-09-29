@@ -1,0 +1,46 @@
+Script started on Thu 28 Sep 2017 11:37:06 PM EDT
+]0;redpocket@redpocket-VirtualBox: ~/Desktop/CIS667/lab3[01;32mredpocket@redpocket-VirtualBox[00m:[01;34m~/Desktop/CIS667/lab3[00m$ clisp
+  i i i i i i i       ooooo    o        ooooooo   ooooo   ooooo
+  I I I I I I I      8     8   8           8     8     o  8    8
+  I  \ `+' /  I      8         8           8     8        8    8
+   \  `-+-'  /       8         8           8      ooooo   8oooo
+    `-__|__-'        8         8           8           8  8
+        |            8     o   8           8     o     8  8
+  ------+------       ooooo    8oooooo  ooo8ooo   ooooo   8
+
+Welcome to GNU CLISP 2.49 (2010-07-07) <http://clisp.cons.org/>
+
+Copyright (c) Bruno Haible, Michael Stoll 1992, 1993
+Copyright (c) Bruno Haible, Marcus Daniels 1994-1997
+Copyright (c) Bruno Haible, Pierpaolo Bernardi, Sam Steingold 1998
+Copyright (c) Bruno Haible, Sam Steingold 1999-2000
+Copyright (c) Sam Steingold, Bruno Haible 2001-2010
+
+Type :h and hit Enter for context help.
+
+[1]> (load "lab_remove.lisp")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+;; Loading file lab_remove.lisp ...
+;; Loaded file lab_remove.lisp
+T
+[2]> (load "lab_replace")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C.")l")i")s")p")
+;; Loading file lab_replace.lisp ...
+;; Loaded file lab_replace.lisp
+T
+[3]> (myremove '(a b c)[C[C[C[C[C[C[C 'b)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+(A C)
+[4]> (myremove '(a b c) 'b)[C[1@ [1@b[1@ [1@c[1@ [1@b[1@ [1@c[1@ [1@b[1@ [1@c
+(A C C C C)
+[5]> (myremove '(a b c b c b c b c) 'b)[1@b[1P[1@n[1@i[1@l[1@ 
+(A C NIL C C C)
+[6]> (myremove '(a b c b nil c b c b c) 'b)[C[C[C[C[C[C[4P[C[C[C[C[C[C[C[C[C[C[C[C[C[C) 'b)[K[C[C[C[C[C[Cload "lab_replace.lisp")[C[C[C[C[C[C[3Pmyremove '(a b c) 'b)[1P[1P[1P[1P[1@p[1@l[1@a[1@c[1@e[C[C[C[C[C[C[C[C[C[C[C[C )')a)
+(A A C)
+[7]> (myreplace '(a b c) 'b 'a)[C[C[C[C[C[C[C[C[C[Cmove '(a b c b nil c b c b c) 'b)[4P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1@p[1@l[1@a[1@c[1@e[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C )')a)
+(A A C A C A C A C)
+[8]> (myreplace '(a b c b c b c b c) 'b 'a)[12P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmove '(a b c b nil c b c b c) 'b)[C[C[C[1P[1P[1P[1P[1@p[1@l[1@a[1@c[1@e[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C )')a)
+(A A C A NIL C A C A C)
+[9]> 
+Bye.
+]0;redpocket@redpocket-VirtualBox: ~/Desktop/CIS667/lab3[01;32mredpocket@redpocket-VirtualBox[00m:[01;34m~/Desktop/CIS667/lab3[00m$ exit
+exit
+
+Script done on Thu 28 Sep 2017 11:39:12 PM EDT
