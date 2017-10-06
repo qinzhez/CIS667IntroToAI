@@ -48,7 +48,11 @@
 (defun straight-distance (city1 city2)
   "Distance between two cities on a straight line (as the crow flies)."
   ;; We round this to the nearest integer, just to make things easier to read
-  (round (xy-distance (city-loc city1) (city-loc city2))))
+ ;; (round (xy-distance (city-loc city1) (city-loc city2))))
+
+;;(+(abs (-(first (city-loc city1))(first(city-loc city2))))
+;;(abs(-(first(rest(city-loc city1)))(first(rest(city-loc city2)))))))
+(max (abs (-(first (city-loc city1))(first(city-loc city2)))) (abs(-(first(rest(city-loc city1))) (first(rest(city-loc city2)))))))
 
 (defun find-city (name map)
   "Look up the city on the map, and return its information."

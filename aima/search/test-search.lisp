@@ -48,35 +48,35 @@
   ((compare-search-algorithms #'make-romanian-problem
 			     '(tree-A*-search A*-search tree-IDA*-search)
 			     :n 1))
-  "We'll look at the iterative improvement algorithms on a harder map problem."
-  ((setq searchers '(A*-search hill-climbing-search
-			       simulated-annealing-search)))
-  ((compare-search-algorithms #'(lambda () (make-romanian-problem :goal 'Iasi))
-			      searchers :n 1))
-  "Let's take a look at the 8-puzzle:"
-  ((solve (make-8-puzzle-problem)) *)
-  ((compare-search-algorithms 'make-8-puzzle-problem '(A*-search) :n 2))
-  "And the path-planning problem among polygonal obstacles:"
-  ((solve (make-path-planning-problem :scene *scene-4.17*)))
-  "Now the 8-queens problem"
-  ((solve (make-nqueens-problem) 'csp-backtracking-search) *)
-  ((compare-search-algorithms
-    'make-nqueens-problem
-    '(csp-backtracking-search csp-forward-checking-search)
-    :n 1))
-  "Here is the Travelling Salesperson Problem (TSP)."
-  ((solve (make-tsp-problem)))
-  ((compare-search-algorithms 'make-tsp-problem
-			     '(A*-search greedy-search uniform-cost-search)
-			     :n 5))
-  "Now we test the environments for 2-player and 3-player games:"
-  ((run-game (make-ttt-game)))
-  ((run-game (make-cognac-game :players '(X O @))))
-  "Now we see that 2x2 tic-tac-toe is a win for the first player, X."
-  ((run-game (make-ttt-game :n 2) 
-	     :agents '(alpha-beta-ttt-agent alpha-beta-ttt-agent)))
-  "In a full 3x3 game, alpha-beta search (playing O) often wins."
-  ((run-game (make-ttt-game) :agents '(random-game-agent alpha-beta-ttt-agent)))
-  )
+;;"We'll look at the iterative improvement algorithms on a harder map problem."
+;;((setq searchers '(A*-search hill-climbing-search
+			;;;;   simulated-annealing-search)))
+;;((compare-search-algorithms #'(lambda () (make-romanian-problem :goal 'Iasi))
+			;;    searchers :n 1))
+"Let's take a look at the 8-puzzle:"
+((solve (make-8-puzzle-problem)) *)
+((compare-search-algorithms 'make-8-puzzle-problem '(A*-search) :n 2))
+;;"And the path-planning problem among polygonal obstacles:"
+;;((solve (make-path-planning-problem :scene *scene-4.17*)))
+;;"Now the 8-queens problem"
+;;((solve (make-nqueens-problem) 'csp-backtracking-search) *)
+;;((compare-search-algorithms
+;;  'make-nqueens-problem
+;;  '(csp-backtracking-search csp-forward-checking-search)
+;;  :n 1))
+;;"Here is the Travelling Salesperson Problem (TSP)."
+;;((solve (make-tsp-problem)))
+;;((compare-search-algorithms 'make-tsp-problem
+			;;   '(A*-search greedy-search uniform-cost-search)
+			;;   :n 5))
+;;"Now we test the environments for 2-player and 3-player games:"
+;;((run-game (make-ttt-game)))
+;;((run-game (make-cognac-game :players '(X O @))))
+;;"Now we see that 2x2 tic-tac-toe is a win for the first player, X."
+;;((run-game (make-ttt-game :n 2) 
+	  ;; :agents '(alpha-beta-ttt-agent alpha-beta-ttt-agent)))
+;;"In a full 3x3 game, alpha-beta search (playing O) often wins."
+;;((run-game (make-ttt-game) :agents '(random-game-agent alpha-beta-ttt-agent)))
+)
 
 
